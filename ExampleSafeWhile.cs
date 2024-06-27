@@ -1,7 +1,7 @@
 using UnityEngine;
 using static Safe; // this is not mandatory, you can use Safe.@while
 
-public class Example : MonoBehaviour
+public class ExampleSafeWhile : MonoBehaviour
 {
     public int value1= 00;
     public int value2= 15;
