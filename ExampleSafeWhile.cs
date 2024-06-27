@@ -11,14 +11,14 @@ public class ExampleSafeWhile : MonoBehaviour
     {
         @while((() => (value1 < value2) && (value2 > value3)), () =>
         {
-            Debug.Log("Max 500 loops, then return with a LogWarning");
+            Debug.Log("Max 1000 loops, then return with a LogWarning");
             value1++;
         });
     }
     
     void MethodWithSafeWhileAndCustomLimit()
     {
-        int customLoopLimitAmount = 1000;
+        int customLoopLimitAmount = 500;
     
     
         @while((() => (value1 < value2) && (value2 > value3)), () =>
