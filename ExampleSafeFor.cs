@@ -1,5 +1,5 @@
 using UnityEngine;
-using static Safe;
+using static Safe; // this is not mandatory, you can use Safe.CheckFor(...)
 
 public class ExampleSafeFor : MonoBehaviour
 {
@@ -8,14 +8,14 @@ public class ExampleSafeFor : MonoBehaviour
         int exit_at = ITERATION_LIMIT_BEFORE_EXIT;
     
     
-        for (int i = 0; Check(() => i < 10, ref exit_at); i++)
+        for (int i = 0; CheckFor(() => i < 10, ref exit_at); i++)
         {
             // code here...
             // exit with a warning if the limit is reached
         }
     
     
-        for (int i = 0; Check(() => i < 10, ref exit_at, true); i++)
+        for (int i = 0; CheckFor(() => i < 10, ref exit_at, true); i++)
         {
             // code here...
             // exit with an error if the limit is reached
@@ -43,19 +43,19 @@ public class ExampleSafeFor : MonoBehaviour
         // Check ()
     
     
-        var check_with_error = Check(true); // equal to: Check (true, 1000)
+        var check_with_error = CheckFor(true); // equal to: Check (true, 1000)
     
         for (int i = 0; check_with_error(() => true); i++)
         { /* code here */ }
     
     
-        var check_with_warning = Check(); // equal to Check (false, 1000)
+        var check_with_warning = CheckFor(); // equal to Check (false, 1000)
         
         for (int i = 0; check_with_warning(() => i < 10); i++)
         { /* code here */ }
     
     
-        var check_with_custom_limit = Check(5); // equal to Check (false, 5)
+        var check_with_custom_limit = CheckFor(5); // equal to Check (false, 5)
     
         for (int i = 0; check_with_custom_limit(() => i < 10); i++)
         { /* code here */ }
