@@ -7,4 +7,9 @@ Just download the .dll file and add in your Assets folder.
 Changelog:
 
 v.0.1.0
-  - Safe.@while (function that replace normal while)
+  - created Safe.@while (function that replace normal while)
+
+v.0.2.0
+  - created Safe.CheckFor (function that replace "for" condition)
+  - created Safe.@for (function that replace normal for)
+  - incremented default iterations limit to 1000
